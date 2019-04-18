@@ -1,0 +1,15 @@
+def insertionsort(seq):
+    n=len(seq)
+    for i in range(1,n):
+        value=seq[i]
+        pos=i
+        while pos>0 and value<seq[pos-1]:
+            seq[pos]=seq[pos-1]
+            pos-=1
+        seq[pos]=value
+    return seq
+l=[5,2,9,7,1]
+print(insertionsort(l))
+            
+            
+            

@@ -1,0 +1,11 @@
+def bubblesort(collection):
+    n=len(collection)
+    for i in range(n-1):
+        for j in range(n-1):
+            if collection[j]>collection[j+1]:
+                tmp=collection[j]
+                collection[j]=collection[j+1]
+                collection[j+1]=tmp
+    return collection
+l=[8,5,7,2,1,9]
+print(bubblesort(l))
