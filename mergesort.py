@@ -1,33 +1,27 @@
-def mergesort(seq):
-    if len(seq)>1:
-        mid=len(seq)//2
-        l=seq[:mid]
-        r=seq[mid:]
-        mergesort(l)
-        mergesort(r)
+def mergesort(arr):
+    if len(arr)>1:
+        mid=len(arr)//2
+        left=arr[:mid]
+        right=arr[mid:]
+        mergesort(left)
+        mergesort(right)
         i=j=k=0
-        while i<len(l) and j<len(r):
-            if l[i]<r[j]:
-                seq[k]=l[i]
-                i=i+1
+        while i<len(left) and j<len(right):
+            if left[i]<right[j]:
+                arr[k]=left[i]
+                i+=1
             else:
-                seq[k]=r[j]
-                j=j+1
-            k=k+1
-        while i<len(l):
-            seq[k]=l[i]
-            i=i+1
-            k=k+1
-        while j<len(r):
-            seq[k]=r[j]
-            j=j+1
-            k=k+1
-print("welcome to the mergesort program")
-n=int(input("enter no of elements in your array"))
-arr=[]
-for i in range(n):
-    arr.append(int(input("enter %dth element"%i)))
-print("your entered array=",arr)
-mergesort(arr)
-print("your array after applying mergesort algorithm",arr)
-    
+                arr[k]=right[j]
+                j+=1
+            k+=1
+        while i<len(left):
+            arr[k]=left[i]
+            k+=1
+            i+=1
+        while j<len(right):
+            arr[k]=right[j]
+            k+=1
+            j+=1
+l=[2,4,1,0,3,9,1]
+mergesort(l)
+print(l)
